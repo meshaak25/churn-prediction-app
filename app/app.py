@@ -32,7 +32,7 @@ def encode_input(df, encoders):
 
 st.title("Customer Churn Prediction (US Telecom Dataset)")
 
-st.info("⚠️ Use realistic values. Monthly Charges: 20–120, Tenure: 0–72 months")
+st.info("Use realistic values !. Monthly Charges: 20–120, Tenure: 0–72 months")
 
 st.write("Enter customer details:")
 
@@ -44,9 +44,8 @@ contract = st.selectbox("Contract", ["Month-to-month", "One year", "Two year"])
 tech_support = st.selectbox("Tech Support", ["Yes", "No"])
 internet_service = st.selectbox("Internet Service", ["DSL", "Fiber optic", "No"])
 
-# 🔥 Derived value
 total_charges = monthly_charges * tenure if tenure > 0 else 0
-st.write(f"💰 Estimated Total Charges: {total_charges:.2f}")
+st.write(f"~Estimated Total Charges: {total_charges:.2f}")
 
 # ---------------- Predict ----------------
 if st.button("Predict"):
@@ -91,6 +90,6 @@ if st.button("Predict"):
     st.write(f"Churn Probability: {prob:.2f}")
 
     if prediction == 1:
-        st.error("⚠️ Customer is likely to churn")
+        st.error("Customer is likely to churn !")
     else:
-        st.success("✅ Customer is likely to stay")
+        st.success("Customer is likely to stay !")
